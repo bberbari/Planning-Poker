@@ -1,0 +1,139 @@
+.card-selector {
+  padding: 20px;
+}
+
+.card-selector h3 {
+  color: #3b6ba5;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card-hint {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.cards-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 140px;
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover:not(.disabled) {
+  transform: translateY(-5px);
+  border-color: #3b6ba5;
+  box-shadow: 0 8px 16px rgba(59, 107, 165, 0.3);
+}
+
+.card.selected {
+  border-color: #3b6ba5;
+  background: #3b6ba5;
+  color: white;
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(59, 107, 165, 0.4);
+  animation: cardSelect 0.3s ease-out;
+}
+
+@keyframes cardSelect {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.1);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+.card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: inherit;
+}
+
+.vote-confirmation {
+  text-align: center;
+  padding: 15px;
+  background: #e8f5e9;
+  border-radius: 8px;
+  color: #2e7d32;
+  font-size: 1rem;
+  animation: fadeIn 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+  animation: checkPop 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes checkPop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.vote-confirmation strong {
+  font-size: 1.2rem;
+  color: #3b6ba5;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 80px;
+    height: 112px;
+  }
+
+  .card-value {
+    font-size: 2rem;
+  }
+
+  .cards-container {
+    gap: 10px;
+  }
+}

@@ -1,0 +1,252 @@
+.join-session-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .join-session-content {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+  
+  .emoji-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  
+  .emoji-btn {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+}
+
+.join-session-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+.join-session-content h2 {
+  color: #3b6ba5;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.session-id {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b6ba5;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.admin-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #3b6ba5;
+}
+
+.checkbox-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+  margin-left: 30px;
+  font-style: italic;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emoji-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.emoji-btn:hover {
+  border-color: #3b6ba5;
+  transform: scale(1.05);
+  z-index: 1;
+  position: relative;
+}
+
+.emoji-btn.selected {
+  border-color: #3b6ba5;
+  background: #e8f0f8;
+  transform: scale(1.08);
+  z-index: 1;
+  position: relative;
+}
+
+.join-btn {
+  background: #3b6ba5;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  font-weight: 600;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+}
+
+.join-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 107, 165, 0.4);
+  background: #2d5a8a;
+}
+
+.join-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner-small {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  background: #ffeaea;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.error-close-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.error-close-btn:hover {
+  opacity: 0.7;
+}
+
+.connection-status-info {
+  padding: 15px;
+  background: #e8f4f8;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.connection-status-info p {
+  margin: 5px 0;
+  color: #3b6ba5;
+  font-size: 0.95rem;
+}
+
+.connection-hint {
+  font-size: 0.85rem !important;
+  color: #666 !important;
+  font-style: italic;
+}

@@ -1,0 +1,24 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compact bridge logo for footer -->
+  <g>
+    <!-- Main arch spans -->
+    <path d="M 10 20 Q 20 10 30 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 20 20 Q 30 10 40 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 30 20 Q 40 10 50 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 40 20 Q 50 10 60 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 50 20 Q 60 10 70 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 60 20 Q 70 10 80 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 70 20 Q 80 10 90 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 80 20 Q 90 10 100 20" stroke="#1a4d8c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Vertical supports -->
+    <line x1="15" y1="20" x2="15" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="35" y1="20" x2="35" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="55" y1="20" x2="55" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="75" y1="20" x2="75" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="95" y1="20" x2="95" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Horizontal base -->
+    <line x1="10" y1="35" x2="100" y2="35" stroke="#1a4d8c" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>

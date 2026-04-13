@@ -1,0 +1,17 @@
+# Optional: connect this repo in Render and use "Blueprint" to create the web service from this file.
+# Set FRONTEND_URL in the Render dashboard after your static site URL exists (HTTPS, no trailing slash).
+
+services:
+  - type: web
+    name: planning-poker-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: FRONTEND_URL
+        sync: false

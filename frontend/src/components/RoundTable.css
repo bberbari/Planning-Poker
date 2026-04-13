@@ -1,0 +1,211 @@
+.roundtable-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+}
+
+.roundtable-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b6ba5;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.roundtable-circle {
+  position: relative;
+  border: 4px solid #3b6ba5;
+  border-radius: 50%;
+  margin: 20px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f8 100%);
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 10;
+  position: relative;
+}
+
+.user-avatar:not(.current-user):hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  animation: avatarPulse 0.5s ease-in-out;
+}
+
+@keyframes avatarPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+.user-avatar.current-user {
+  cursor: default;
+}
+
+.avatar-initials {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #3b6ba5;
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #e0e0e0;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.user-avatar.voted .avatar-initials {
+  border-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+
+.user-avatar.not-voted .avatar-initials {
+  border-color: #ff9800;
+}
+
+.user-avatar.current-user .avatar-initials {
+  border-color: #3b6ba5;
+  border-width: 4px;
+}
+
+.avatar-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-crown {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  z-index: 11;
+}
+
+.voted-indicator {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background: #4caf50;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 12;
+}
+
+.vote-badge {
+  position: absolute;
+  bottom: -10px;
+  background: #3b6ba5;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 12;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.roundtable-legend {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.legend-dot.voted {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.legend-dot.not-voted {
+  background: #ff9800;
+  border-color: #ff9800;
+}
+
+.legend-dot.current-user {
+  background: #3b6ba5;
+  border-color: #3b6ba5;
+}
+
+.legend-hint {
+  margin-left: 20px;
+  font-style: italic;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .roundtable-circle {
+    min-width: 250px;
+    min-height: 250px;
+  }
+
+  .avatar-initials {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .avatar-name {
+    font-size: 0.8rem;
+    max-width: 80px;
+  }
+
+  .roundtable-legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .legend-hint {
+    margin-left: 0;
+    text-align: center;
+  }
+}
