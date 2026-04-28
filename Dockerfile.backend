@@ -17,7 +17,7 @@ EXPOSE 3001
 
 # Environment variables
 ENV PORT=3001
-ENV FRONTEND_URL=http://localhost:3000
+ENV FRONTEND_URL=*
 
 # Start the server
 CMD ["node", "server.js"]

@@ -12,13 +12,8 @@ function parseAllowedOrigins() {
 const allowedOrigins = parseAllowedOrigins();
 
 function allowCorsOrigin(origin, callback) {
-  if (!origin) {
-    return callback(null, true);
-  }
-  if (allowedOrigins.includes(origin)) {
-    return callback(null, true);
-  }
-  callback(new Error(`CORS blocked for origin: ${origin}`));
+  // Allow all origins (wildcard)
+  return callback(null, true);
 }
 
 const app = express();

@@ -10,7 +10,7 @@ services:
       - "3001:3001"
     environment:
       - PORT=3001
-      - FRONTEND_URL=http://frontend:80,http://192.168.27.130,http://192.168.27.130:3001
+      - FRONTEND_URL=*
     restart: unless-stopped
     networks:
       - poker-network
@@ -20,8 +20,7 @@ services:
       context: .
       dockerfile: Dockerfile.frontend
       args:
-        - VITE_API_URL=http://192.168.27.130:3001
-        - VITE_SOCKET_URL=http://192.168.27.130:3001
+        - VITE_API_URL=http://backend:3001
     container_name: planning-poker-frontend
     ports:
       - "80:80"

@@ -14,4 +14,5 @@ services:
       - key: NODE_VERSION
         value: "20"
       - key: FRONTEND_URL
+        # Set to * for wildcard (allow all origins), or your frontend URL (e.g., https://your-app.onrender.com)
         sync: false
