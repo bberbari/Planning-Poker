@@ -33,4 +33,4 @@ services:
 
 networks:
   poker-network:
-    driver: bridge
+    driver: host
