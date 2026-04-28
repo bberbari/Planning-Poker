@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: Dockerfile.frontend
       args:
-        - VITE_API_URL=http://backend:3001
+        - VITE_API_URL=172.17.24.12:3001
     container_name: planning-poker-frontend
     ports:
       - "80:80"
