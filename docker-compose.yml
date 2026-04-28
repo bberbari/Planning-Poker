@@ -10,7 +10,7 @@ services:
       - "3001:3001"
     environment:
       - PORT=3001
-      - FRONTEND_URL=http://frontend:80,http://192.168.27.130:3001
+      - FRONTEND_URL=http://frontend:80,http://192.168.27.130,http://192.168.27.130:3001
     restart: unless-stopped
     networks:
       - poker-network
