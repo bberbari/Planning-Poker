@@ -14,12 +14,11 @@ COPY frontend/ .
 
 # Build arguments for API URL
 ARG VITE_API_URL=http://localhost:3001
-ARG VITE_SOCKET_URL=http://172.17.24.12:3001
+ARG VITE_SOCKET_URL=    
 
 # Set environment variables for build
 ENV VITE_API_URL=${VITE_API_URL}
-ENV VITE_SOCKET_URL=http://172.17.24.12:3001
-
+ENV VITE_SOCKET_URL=${VITE_SOCKET_URL}
 # Build the React app
 RUN npm run build
 
